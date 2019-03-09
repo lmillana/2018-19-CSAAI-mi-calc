@@ -1,3 +1,7 @@
+body {
+  background-image:url('nums.jpg');
+}
+
 .calc{
   display: block;
   margin: 0 auto;
@@ -10,7 +14,7 @@
 }
 
 .calc td button {
-  margin-left: auto;
+  margin: auto;
   display: block;
   width: 37px;
   height: 30px;
@@ -20,8 +24,11 @@
 #resultado {
   display: block;
   text-align: center;
+  font-family: courier;
   width: 200px;
   height: 100px;
   background-color: white;
   border-radius: 25px;
+  overflow: auto;
+  line-height: 100px;
 }

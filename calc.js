@@ -9,7 +9,7 @@ function init(){
   var cero = document.getElementById("cero");
   var uno = document.getElementById("uno");
   var dos = document.getElementById("dos");
-  var tres = document.getElementById("tres");
+  var tres= document.getElementById("tres");
   var cuatro = document.getElementById("cuatro");
   var cinco = document.getElementById("cinco");
   var seis = document.getElementById("seis");
@@ -25,40 +25,40 @@ function init(){
   var igual = document.getElementById("igual");
   var reset = document.getElementById("reset");
 
-  // Variable - Resultado:
-  var resultado = document.getElementById("resultado");
+  // Variable que devuelve el resultado:
+  var display = document.getElementById("resultado");
 
 
   // Eventos - Números:
   cero.onclick = function(){
-    resultado.textContent = resultado.textContent + "0";
+    display.innerHTML = display.innerHTML + "0";
   }
   uno.onclick = function(){
-    resultado.textContent = resultado.textContent + "1";
+    display.innerHTML = display.innerHTML + "1";
   }
   dos.onclick = function(){
-    resultado.textContent = resultado.textContent + "2";
+    display.innerHTML = display.innerHTML + "2";
   }
   tres.onclick = function(){
-    resultado.textContent = resultado.textContent + "3";
+    display.innerHTML = display.innerHTML + "3";
   }
   cuatro.onclick = function(){
-    resultado.textContent = resultado.textContent + "4";
+    display.innerHTML = display.innerHTML + "4";
   }
   cinco.onclick = function(){
-    resultado.textContent = resultado.textContent + "5";
+    display.innerHTML = display.innerHTML + "5";
   }
   seis.onclick = function(){
-    resultado.textContent = resultado.textContent + "6";
+    display.innerHTML = display.innerHTML + "6";
   }
   siete.onclick = function(){
-    resultado.textContent = resultado.textContent + "7";
+    display.innerHTML = display.innerHTML + "7";
   }
   ocho.onclick = function(){
-    resultado.textContent = resultado.textContent + "8";
+    display.innerHTML = display.innerHTML + "8";
   }
   nueve.onclick = function(){
-    resultado.textContent = resultado.textContent + "9";
+    display.innerHTML = display.innerHTML + "9";
   }
 
   // Eventos - Operaciones:
@@ -66,33 +66,33 @@ function init(){
     resetear();
   }
   suma.onclick = function(){
-    operando1 = resultado.textContent;
+    operando1 = display.innerHTML;
     operacion = "+";
     clean();
 
   }
   resta.onclick = function(){
-    operando1 = resultado.textContent;
+    operando1 = display.innerHTML;
     operacion = "-";
     clean();
   }
   mult.onclick = function(){
-    operando1 = resultado.textContent;
+    operando1 = display.innerHTML;
     operacion = "*";
     clean();
   }
   division.onclick = function(){
-    operando1 = resultado.textContent;
+    operando1 = display.innerHTML;
     operacion = "/";
     clean();
   }
   igual.onclick = function(){
-    operando2 = resultado.textContent;
+    operando2 = display.innerHTML;
     resolver();
   }
 
   function clean(){
-    resultado.textContent = "";
+    display.innerHTML = "";
   }
 
   function resetear(){
@@ -103,28 +103,27 @@ function init(){
   }
 
   function resolver (){
-    var res = 0;
+    var total= 0;
     switch (operacion) {
       case "+":
-        res = parseFloat(operando1) + parseFloat(operando2);
+        total = parseFloat(operando1) + parseFloat(operando2);
         break;
 
       case "-":
-        res = parseFloat(operando1) - parseFloat(operando2);
+        total = parseFloat(operando1) - parseFloat(operando2);
         break;
 
       case "*":
-        res = parseFloat(operando1) * parseFloat(operando2);
+        total = parseFloat(operando1) * parseFloat(operando2);
         break;
 
       case "/":
-        res = parseFloat(operando1) / parseFloat(operando2);
+        total = parseFloat(operando1) / parseFloat(operando2);
         break;
     }
     resetear();
-    resultado.textContent = res;
+    // -- Mostrar el resultado en el display:
+    //display.textContent = total;
+    display.innerHTML = total;
   }
-
-
-
 }
